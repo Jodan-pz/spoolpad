@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86EFBCF7-79DD-48A7-B9A2-0D4CCF7D085C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>it.jodan.SpoolPad</RootNamespace>
+    <AssemblyName>SpoolPad</AssemblyName>
+    <StartupObject>it.jodan.SpoolPad.SpoolPadProgram</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Mono.Security" />
+    <Reference Include="gtksourceview2-sharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtksourceview2-sharp</Package>
+    </Reference>
+    <Reference Include="webkit-sharp, Version=1.1.15.0, Culture=neutral, PublicKeyToken=eaa1d335d2e19745">
+      <Package>webkit-sharp-1.0</Package>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="Common.Logging">
+      <HintPath>..\Equisetum2\Lib\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>..\Equisetum2\Lib\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\Equisetum2\Lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.DynamicProxy">
+      <HintPath>..\Equisetum2\Lib\LinFu.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Equisetum2\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.LinFu">
+      <HintPath>..\Equisetum2\Lib\NHibernate.ByteCode.LinFu.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\Equisetum2\Lib\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>..\Equisetum2\Lib\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\Equisetum2\Lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\Equisetum2\Lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\Equisetum2\Lib\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\Equisetum2\Lib\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Equisetum2.Spring">
+      <HintPath>..\Equisetum2\Lib\Equisetum2.Spring.dll</HintPath>
+    </Reference>
+    <Reference Include="Equisetum2.Common">
+      <HintPath>..\Equisetum2\Lib\Equisetum2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Equisetum2.NHibernate">
+      <HintPath>..\Equisetum2\Lib\Equisetum2.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\Tools\mysql-connector-net-6.3.6-noinstall\v2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpringDefintions\SpoolPadSpringObjects.xml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Helpers\MessageHelper.cs" />
+    <Compile Include="Helpers\FileDialogHelper.cs" />
+    <Compile Include="BaseClasses\CodeType.cs" />
+    <Compile Include="BaseClasses\MessageType.cs" />
+    <Compile Include="BaseClasses\CodeRunner.cs" />
+    <Compile Include="BaseClasses\AbstractContext.cs" />
+    <Compile Include="Domain\___DummyClass__.cs" />
+    <Compile Include="BaseClasses\DataContextBuilder.cs" />
+    <Compile Include="DataContext\BaseDataContext.cs" />
+    <Compile Include="DataContext\BaseNoDataContext.cs" />
+    <Compile Include="BaseClasses\IDomainGenerator.cs" />
+    <Compile Include="BaseClasses\AbstractDomainGenerator.cs" />
+    <Compile Include="BaseClasses\IExecutableCodeGenerator.cs" />
+    <Compile Include="Services\CSharpSimpleDomainGenerator.cs" />
+    <Compile Include="Services\CSharpSimpleExecutableCodeGenerator.cs" />
+    <Compile Include="Services\VBasicSimpleExecutableCodeGenerator.cs" />
+    <Compile Include="BaseClasses\Configuration\PadConfig.cs" />
+    <Compile Include="BaseClasses\Configuration\MapConfig.cs" />
+    <Compile Include="BaseClasses\Configuration\ConnectionConfig.cs" />
+    <Compile Include="BaseClasses\Configuration\DataContextConfig.cs" />
+    <Compile Include="Extensions\SpoolExtensions.cs" />
+    <Compile Include="Services\HtmlViewSpoolService.cs" />
+    <Compile Include="Services\TextViewSpoolService.cs" />
+    <Compile Include="BaseClasses\ISpoolerService.cs" />
+    <Compile Include="SpoolPadProgram.cs" />
+    <Compile Include="Services\LogViewSpoolService.cs" />
+    <Compile Include="Helpers\SpoolerHelper.cs" />
+    <Compile Include="gtk-gui\SpoolPadWindow.cs" />
+    <Compile Include="SpoolPadWindow.cs" />
+    <Compile Include="RuntimeConfiguration\NameValueMultipleSectionHandler.cs" />
+    <Compile Include="BaseClasses\DataContextCommandAttribute.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="app.config">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.cfg.xml">
+      <Gettext-ScanForTranslations>false</Gettext-ScanForTranslations>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="BaseClasses\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Domain\" />
+    <Folder Include="DataContext\" />
+    <Folder Include="SpringDefintions\" />
+    <Folder Include="Services\" />
+    <Folder Include="BaseClasses\Configuration\" />
+    <Folder Include="RuntimeConfiguration\" />
+  </ItemGroup>
+</Project>

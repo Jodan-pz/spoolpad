@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="gtksourceview2-sharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="webkit-sharp, Version=1.1.15.0, Culture=neutral, PublicKeyToken=eaa1d335d2e19745" />
+    <widget-library name="../bin/Release/SpoolPad.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="SpoolPadWindow" design-size="757 482">
+    <action-group name="Default">
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="EditAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Edit</property>
+        <property name="ShortLabel" translatable="yes">Edit</property>
+      </action>
+      <action id="newAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_New</property>
+        <property name="ShortLabel" translatable="yes">_New</property>
+        <property name="StockId">gtk-new</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnNewActionActivated" />
+      </action>
+      <action id="openAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Open</property>
+        <property name="ShortLabel" translatable="yes">_Open</property>
+        <property name="StockId">gtk-open</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnOpenActionActivated" />
+      </action>
+      <action id="saveAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Save</property>
+        <property name="ShortLabel" translatable="yes">_Save</property>
+        <property name="StockId">gtk-save</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnSaveActionActivated" />
+      </action>
+      <action id="saveAsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Save _As</property>
+        <property name="ShortLabel" translatable="yes">Save _As</property>
+        <property name="StockId">gtk-save-as</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnSaveAsActionActivated" />
+      </action>
+      <action id="quitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Quit</property>
+        <property name="ShortLabel" translatable="yes">_Quit</property>
+        <property name="StockId">gtk-quit</property>
+        <signal name="Activated" handler="OnQuitActionActivated" />
+      </action>
+      <action id="cutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cu_t</property>
+        <property name="ShortLabel" translatable="yes">Cu_t</property>
+        <property name="StockId">gtk-cut</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnCutActionActivated" />
+      </action>
+      <action id="copyAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Copy</property>
+        <property name="ShortLabel" translatable="yes">_Copy</property>
+        <property name="StockId">gtk-copy</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnCopyActionActivated" />
+      </action>
+      <action id="pasteAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Paste</property>
+        <property name="ShortLabel" translatable="yes">_Paste</property>
+        <property name="StockId">gtk-paste</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnPasteActionActivated" />
+      </action>
+      <action id="runCodeAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">F5</property>
+        <property name="Label" translatable="yes">_Run</property>
+        <property name="ShortLabel" translatable="yes">_Run</property>
+        <property name="StockId">gtk-go-forward</property>
+        <property name="Tooltip" translatable="yes" />
+        <signal name="Activated" handler="OnRunCodeActionActivated" />
+      </action>
+      <action id="stopAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Shift&gt;F5</property>
+        <property name="Label" translatable="yes">_Stop</property>
+        <property name="Sensitive">False</property>
+        <property name="ShortLabel" translatable="yes">_Stop</property>
+        <property name="StockId">gtk-stop</property>
+        <signal name="Activated" handler="OnStopActionActivated" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">SpoolPad</property>
+    <property name="WindowPosition">Center</property>
+    <property name="BorderWidth">2</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="vboxMain">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar">
+            <property name="MemberName" />
+            <node name="menubar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="newAction" />
+                <node type="Menuitem" action="openAction" />
+                <node type="Menuitem" action="saveAction" />
+                <node type="Menuitem" action="saveAsAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="quitAction" />
+              </node>
+              <node type="Menu" action="EditAction">
+                <node type="Menuitem" action="cutAction" />
+                <node type="Menuitem" action="copyAction" />
+                <node type="Menuitem" action="pasteAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="runCodeAction" />
+                <node type="Menuitem" action="stopAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbarOptions">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <property name="ButtonStyle">Both</property>
+            <property name="IconSize">SmallToolbar</property>
+            <node name="toolbarOptions" type="Toolbar">
+              <node type="Toolitem" action="newAction" />
+              <node type="Toolitem" action="openAction" />
+              <node type="Toolitem" action="saveAction" />
+              <node type="Toolitem" action="saveAsAction" />
+              <node type="Separator" />
+              <node type="Toolitem" action="cutAction" />
+              <node type="Toolitem" action="copyAction" />
+              <node type="Toolitem" action="pasteAction" />
+              <node type="Separator" />
+              <node type="Toolitem" action="runCodeAction" />
+              <node type="Toolitem" action="stopAction" />
+              <node type="Separator" />
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="cboCodeType">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+            <signal name="Changed" handler="OnCboCodeTypeChanged" />
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VPaned" id="vpanedContainer">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Position">219</property>
+            <child>
+              <widget class="Gtk.VBox" id="vboxCode">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.EventBox" id="codeLabelEventBox">
+                    <property name="MemberName" />
+                    <property name="Events">ButtonPressMask</property>
+                    <signal name="ButtonPressEvent" handler="OnCodeLabelEventBoxButtonPressEvent" />
+                    <child>
+                      <widget class="Gtk.Label" id="lblCode">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Code</property>
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="scrollWndCode">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.Viewport" id="GtkViewport">
+                        <property name="MemberName" />
+                        <property name="ShadowType">None</property>
+                        <child>
+                          <placeholder />
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Resize">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.VBox" id="vboxResult">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.EventBox" id="resultLabelEventBox">
+                    <property name="MemberName" />
+                    <property name="Events">ButtonPressMask</property>
+                    <signal name="ButtonPressEvent" handler="OnResultLabelEventBoxButtonPressEvent" />
+                    <child>
+                      <widget class="Gtk.Label" id="lblResult">
+                        <property name="MemberName" />
+                        <property name="Events">ButtonPressMask</property>
+                        <property name="LabelProp" translatable="yes">Result</property>
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="scrollWndResults">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.Viewport" id="GtkViewport1">
+                        <property name="MemberName" />
+                        <property name="ShadowType">None</property>
+                        <child>
+                          <placeholder />
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">True</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Statusbar" id="statusbar">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="lblTime">
+                <property name="MemberName" />
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="lblConnInfo">
+                <property name="MemberName" />
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="lblStatus">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Ready</property>
+              </widget>
+              <packing>
+                <property name="Position">3</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
