@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name></name>
+  <connection>
+    <connectionstring></connectionstring>
+    <user></user>
+    <password></password>
+    <driver></driver>
+    <dialect></dialect>
+  </connection>
+  <mappings />
+  <codetype>1</codetype>
+  <code><![CDATA["".Spool("Available commands");
+Help();
+
+(from i in new int[]{12,3,45} orderby i descending select i).Spool("Test");]]></code>
+  <datacontext autogen="false" enabled="false" />
+  <usings />
+  <references />
+</spoolpad>

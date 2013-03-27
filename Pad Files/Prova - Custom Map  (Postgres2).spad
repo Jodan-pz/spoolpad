@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name>PostgresDataContext</name>
+  <datacontext autogen="true" enabled="true" />
+  <connection>
+    <connectionstring>Server=localhost;Database=EQUISETUM_SECURITY;port=5432;searchpath=security;User Id=${user};password=${password}</connectionstring>
+    <user>jodan</user>
+    <password>linux</password>
+    <driver>NHibernate.Driver.NpgsqlDriver</driver>
+    <dialect>NHibernate.Dialect.PostgreSQLDialect</dialect>
+  </connection>
+  <mappings>
+    <file>/home/jodan/Projects/Mappings/Test Vari/EsempioTabella2.hbm.xml</file>
+  </mappings>
+  <codetype>1</codetype>
+  <code><![CDATA[DBDomain();
+//DBDesc<Pippo>()
+//Help()
+/*
+Pippo p = new Pippo();
+p.Codice = "001";
+p.Descrizione = "Prova";
+p.DataInizio = DateTime.Now;
+
+DBStore(p);
+*/
+DB<Pippo>().Spool("Pippi!");]]></code>
+</spoolpad>

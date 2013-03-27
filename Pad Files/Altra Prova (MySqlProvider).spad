@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name>MySqlTestDataContext</name>
+  <connection>
+    <connectionstring>Server=localhost;Database=test;Uid=${user};Pwd=${password}</connectionstring>
+    <user>jodan</user>
+    <password>linux</password>
+    <driver>NHibernate.Driver.MySqlDataDriver</driver>
+    <dialect>NHibernate.Dialect.MySQL5Dialect</dialect>
+  </connection>
+  <mappings>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Country.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Customer.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Order.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Product.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/ProductOrder.hbm.xml</file>
+  </mappings>
+  <codetype>1</codetype>
+  <code><![CDATA[DB<Customer>().Select( c=> new Address() {Name=c.Name, CountryName=c.Country.Description} ).Spool("Selezione");
+
+DB<Country>().OrderByDescending(c=>c.Name).Spool("Countries");
+
+}class Address{
+	public string Name{ get;set;}
+	public string CountryName {get;set;}
+}]]></code>
+  <datacontext autogen="true" enabled="true" />
+  <usings />
+  <references />
+</spoolpad>

@@ -166,6 +166,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="README.md" />
+    <None Include="Examples\read.me" />
+    <None Include="Examples\Prova - Custom Map  %28Postgres%29.spad" />
+    <None Include="Examples\Simple.spad" />
+    <None Include="Examples\Testxml.spad" />
+    <None Include="Examples\TheClockExample.spad" />
+    <None Include="Examples\Using Annotations With Custom Type.spad" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
@@ -177,5 +183,6 @@
     <Folder Include="Services\" />
     <Folder Include="BaseClasses\Configuration\" />
     <Folder Include="RuntimeConfiguration\" />
+    <Folder Include="Examples\" />
   </ItemGroup>
 </Project>

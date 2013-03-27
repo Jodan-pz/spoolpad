@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name></name>
+  <connection>
+    <connectionstring></connectionstring>
+    <user></user>
+    <password></password>
+    <driver></driver>
+    <dialect></dialect>
+  </connection>
+  <mappings />
+  <usings>
+    <namespace>System.Xml.Linq</namespace>
+  </usings>
+  <references>
+    <assembly>System.Xml.Linq</assembly>
+  </references>
+  <codetype>1</codetype>
+  <code><![CDATA[XElement config = XElement.Parse (
+@"<configuration>
+	<client enabled='true'>
+		<timeout>30</timeout>
+	</client>
+</configuration>");
+
+foreach (XElement child in config.Elements())
+	child.Name.ToString().Spool ("Child element name");
+
+XElement client = config.Element ("client");
+
+bool enabled = (bool) client.Attribute ("enabled");   // Read attribute
+enabled.Spool ("enabled attribute");
+
+client.Attribute ("enabled").SetValue (!enabled);     // Update attribute
+
+int timeout = (int) client.Element ("timeout");       // Read element
+timeout.Spool ("timeout element");
+
+client.Element ("timeout").SetValue (timeout * 2);    // Update element
+
+client.Add (new XElement ("retries", 3));             // Add new elememt
+
+config.ToString().Spool ("Updated DOM");]]></code>
+  <datacontext autogen="false" enabled="false">
+  </datacontext>
+</spoolpad>

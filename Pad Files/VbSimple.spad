@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name></name>
+  <connection>
+    <connectionstring></connectionstring>
+    <user></user>
+    <password></password>
+    <driver></driver>
+    <dialect></dialect>
+  </connection>
+  <mappings />
+  <codetype>2</codetype>
+  <code><![CDATA[dim x = "abc"
+console.writeline( x )]]></code>
+  <datacontext autogen="false" enabled="false" />
+</spoolpad>

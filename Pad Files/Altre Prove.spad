@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name>MySqlEquisetumDataContext</name>
+  <connection>
+    <connectionstring>Server=localhost;Database=test;Uid=${user};Pwd=${password}</connectionstring>
+    <user>jodan</user>
+    <password>linux</password>
+    <driver>NHibernate.Driver.MySqlDataDriver</driver>
+    <dialect>NHibernate.Dialect.MySQL5Dialect</dialect>
+  </connection>
+  <mappings>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Country.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Customer.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/NewCountry.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Order.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/Product.hbm.xml</file>
+    <file>/home/jodan/Projects/Mappings/Test Vari/ProductOrder.hbm.xml</file>
+  </mappings>
+  <codetype>1</codetype>
+  <code><![CDATA[//DBDomain();
+
+DB<NewCountry>().Spool();
+
+
+var pippo = from e in DB<Product>()
+	    where e.Name.ToLower().Contains("cola")
+	    orderby e.Name descending
+	    select new { NoOfStars = e.Rating, ProductName = e.Name,  e.Category};
+
+pippo.Spool("Products");]]></code>
+  <datacontext autogen="true" enabled="true" />
+  <usings />
+  <references />
+</spoolpad>

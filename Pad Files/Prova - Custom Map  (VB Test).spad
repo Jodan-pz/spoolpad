@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spoolpad>
+  <name>PostgresDataContext</name>
+  <connection>
+    <connectionstring>Server=localhost;Database=EQUISETUM_SECURITY;port=5432;searchpath=security;User Id=${user};password=${password}</connectionstring>
+    <user>jodan</user>
+    <password>linux</password>
+    <driver>NHibernate.Driver.NpgsqlDriver</driver>
+    <dialect>NHibernate.Dialect.PostgreSQLDialect</dialect>
+  </connection>
+  <mappings>
+    <file>/home/jodan/Projects/Mappings/Test Vari/EsempioTabella.hbm.xml</file>
+  </mappings>
+  <codetype>2</codetype>
+  <code><![CDATA[dbdomain
+dim a as ienumerable(of EsempioTabella) = db(of EsempioTabella)
+
+dim x as EsempioTabella
+
+'a.spool
+
+for each x in a 
+	console.writeline( "{0} {1}", x.name,  x.description )	
+next ]]></code>
+  <datacontext autogen="true" enabled="true" />
+</spoolpad>
