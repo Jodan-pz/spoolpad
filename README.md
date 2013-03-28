@@ -18,7 +18,6 @@ Linq 4 All - Mono+Hibernate+Spring+Linq
 Requires:
 --------------------------------------------------------------
 Mono
-MonoDevelop
 libgtksourceview2-cil-dev (CLI binding for GtkSourceView 2.2)
 libwebkit1.1-cil 		  (CLI binding for the WebKit library)
 --------------------------------------------------------------
