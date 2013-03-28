@@ -19,7 +19,7 @@ namespace it.jodan.SpoolPad {
 				
 		public static void Main( string[] args ) {
 			_log.InfoFormat("{0} ready to serve.", APP_NAME);
-			
+
 			// BATCH
 			if (args.Length > 0) {
 				CodeRunner codeRunner = new CodeRunner();
