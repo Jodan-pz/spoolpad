@@ -32,19 +32,35 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Mono.Posix" />
-    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="Mono.Security" />
-    <Reference Include="gtksourceview2-sharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="webkit-sharp, Version=1.1.15.0, Culture=neutral, PublicKeyToken=eaa1d335d2e19745" />
+    <Reference Include="gtksourceview2-sharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtksourceview2-sharp</Package>
+    </Reference>
+    <Reference Include="webkit-sharp, Version=1.1.15.0, Culture=neutral, PublicKeyToken=eaa1d335d2e19745">
+      <Package>webkit-sharp-1.0</Package>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="log4net">
       <HintPath>Lib\log4net.dll</HintPath>
@@ -60,6 +76,7 @@
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>Lib\MySql.Data.dll</HintPath>
+      <Package>mysql-connector-net</Package>
     </Reference>
     <Reference Include="Common.Logging.Log4Net">
       <HintPath>Lib\Common.Logging.Log4Net.dll</HintPath>
@@ -166,12 +183,9 @@
     <None Include="Lib\Iesi.Collections.dll" />
     <None Include="Lib\LinFu.DynamicProxy.dll" />
     <None Include="Lib\log4net.dll" />
-    <None Include="Lib\Mono.Security.dll" />
     <None Include="Lib\NHibernate.ByteCode.LinFu.dll" />
     <None Include="Lib\NHibernate.dll" />
     <None Include="Lib\Npgsql.dll" />
-    <None Include="Lib\nunit.core.dll" />
-    <None Include="Lib\nunit.framework.dll" />
     <None Include="Lib\Spring.Core.dll" />
     <None Include="Lib\Spring.Data.dll" />
     <None Include="Lib\Spring.Data.NHibernate33.dll" />
