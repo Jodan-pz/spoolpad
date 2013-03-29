@@ -196,6 +196,7 @@
                   <widget class="Gtk.EventBox" id="codeLabelEventBox">
                     <property name="MemberName" />
                     <property name="Events">ButtonPressMask</property>
+                    <signal name="ButtonPressEvent" handler="OnCodeLabelEventBoxButtonPressEvent" />
                     <child>
                       <widget class="Gtk.Label" id="lblCode">
                         <property name="MemberName" />
@@ -243,6 +244,7 @@
                   <widget class="Gtk.EventBox" id="resultLabelEventBox">
                     <property name="MemberName" />
                     <property name="Events">ButtonPressMask</property>
+                    <signal name="ButtonPressEvent" handler="OnResultLabelEventBoxButtonPressEvent" />
                     <child>
                       <widget class="Gtk.Label" id="lblResult">
                         <property name="MemberName" />

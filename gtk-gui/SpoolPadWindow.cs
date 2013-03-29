@@ -233,5 +233,7 @@ public partial class SpoolPadWindow
 		this.pasteAction.Activated += new global::System.EventHandler (this.OnPasteActionActivated);
 		this.runCodeAction.Activated += new global::System.EventHandler (this.OnRunCodeActionActivated);
 		this.stopAction.Activated += new global::System.EventHandler (this.OnStopActionActivated);
+		this.codeLabelEventBox.ButtonPressEvent += new global::Gtk.ButtonPressEventHandler (this.OnCodeLabelEventBoxButtonPressEvent);
+		this.resultLabelEventBox.ButtonPressEvent += new global::Gtk.ButtonPressEventHandler (this.OnResultLabelEventBoxButtonPressEvent);
 	}
 }
