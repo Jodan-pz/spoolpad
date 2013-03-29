@@ -19,9 +19,16 @@ Linq 4 All - Mono+Hibernate+Spring+Linq
 Required:
 ----------------------------------------------------------!!!
 
-- Mono
-- libgtksourceview2-cil-dev (CLI binding for GtkSourceView 2.2)
-- libwebkit1.1-cil 		    (CLI binding for the WebKit library)
+- Mono (of course)
+
+ (Ubuntu)  
+ 
+  libgtksourceview2-cil-dev  (CLI binding for GtkSourceView 2.2)
+  libwebkit1.1-cil 		     (CLI binding for the WebKit library)
+  
+ (Suse)
+  gtksourceview2-sharp2 - (GtkSourceView bindings for Mono + gtksourceview package of course)
+  WebKit-Sharp
 
 --------------------------------------------------------------
 
