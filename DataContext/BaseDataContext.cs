@@ -34,17 +34,15 @@ namespace it.jodan.SpoolPad.DataContext {
 		#endregion
 
 		[DataContextCommand("List of all the available elements.")]
-		protected string DBDomain() {
+		protected void DBDomain() {
 			"".Spool("Domain elements");
 			foreach (string entity in uow.GetDomainEntities())
 				entity.Spool();
-			return String.Empty;
 		}
 		
 		[DataContextCommand("Describe element. Example: DBDesc<Product>().")]
-		protected string DBDesc<T>() {
+		protected void DBDesc<T>() {
 			uow.GetEntityAttributes(typeof(T)).Spool( typeof(T).Name );
-			return String.Empty;
 		}
 
 		[DataContextCommand("Create a database.")]
