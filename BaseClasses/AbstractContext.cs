@@ -33,13 +33,13 @@ namespace it.jodan.SpoolPad.BaseClasses {
 		protected string Help() {			
 			"".Spool(SpoolPadProgram.APP_NAME + " - Current Data-Context commands: ");
 			if (!_help.ContainsKey(GetType().BaseType))
-				buildHelp();
+				BuildHelp();
 			foreach (String help in _help[GetType().BaseType])
 				help.Spool();
 			return String.Empty;
 		}
 
-		private void buildHelp() {
+		private void BuildHelp() {
 			List<string> temp = new List<string>();
 			foreach (MethodInfo mi in GetType().GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy).OrderBy(m => m.Name)) {
 				if (mi.IsDefined(typeof(DataContextCommandAttribute), true)) {
