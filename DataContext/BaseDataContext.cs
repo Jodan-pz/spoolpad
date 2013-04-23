@@ -1,18 +1,19 @@
 using System;
-using System.Security;
-using System.Reflection;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security;
+using System.Text;
 
+using System.Threading;
 using Equisetum2.Common.BaseClasses;
 using Equisetum2.Common.Helpers;
 using Equisetum2.NHibernate.Extensions;
 using it.jodan.SpoolPad.BaseClasses;
-using System.Threading;
 using it.jodan.SpoolPad.Extensions;
 
 namespace it.jodan.SpoolPad.DataContext {
+
 	public class BaseDataContext : AbstractContext {
 		IUnitOfWork uow = null;
 
@@ -22,7 +23,8 @@ namespace it.jodan.SpoolPad.DataContext {
 		}
 
 		#region implemented abstract members of it.jodan.SpoolPad.AbstractContext
-		protected override void OnRun() {
+		
+        protected override void OnRun() {
 			try {
 				uow.BeginTransaction();
 				InternalRun();
@@ -31,6 +33,7 @@ namespace it.jodan.SpoolPad.DataContext {
 				uow.Rollback();
 			}
 		}
+
 		#endregion
 
 		[DataContextCommand("List of all the available elements.")]

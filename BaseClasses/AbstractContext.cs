@@ -7,6 +7,7 @@ using System.Threading;
 using System.Security;
 
 namespace it.jodan.SpoolPad.BaseClasses {
+
 	public abstract class AbstractContext {
 		static Dictionary<Type, IEnumerable<string>> _help = new Dictionary<Type, IEnumerable<string>>();
 
@@ -51,4 +52,3 @@ namespace it.jodan.SpoolPad.BaseClasses {
 		}
 	}
 }
-
