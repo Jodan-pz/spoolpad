@@ -15,11 +15,17 @@ namespace it.jodan.SpoolPad {
 
 	public class SpoolPadProgram {
 		public const string APP_NAME = "SpoolPad 1.0";
-		static readonly ILog _log = LogManager.GetLogger(typeof(SpoolPadProgram));
-				
-		public static void Main( string[] args ) {
-			_log.InfoFormat("{0} ready to serve.", APP_NAME);
+		//static readonly ILog _log = LogManager.GetLogger(typeof(SpoolPadProgram));
+		static ILog _log;
 
+		public static void Main( string[] args ) {
+			try{
+				_log = LogManager.GetCurrentClassLogger();
+			}catch(Exception ex ){
+				Console.WriteLine(ex.Message);
+			}
+
+			_log.InfoFormat("{0} ready to serve.", APP_NAME);
 			// BATCH
 			if (args.Length > 0) {
 				CodeRunner codeRunner = new CodeRunner();
