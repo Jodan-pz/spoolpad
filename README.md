@@ -27,7 +27,7 @@ Required:
   libwebkit1.1-cil 		     (CLI binding for the WebKit library)
   
  (Suse)
-  gtksourceview2-sharp2 - (GtkSourceView bindings for Mono + gtksourceview package of course)
+  gtksourceview2-sharp - (GtkSourceView bindings for Mono + gtksourceview package of course)
   WebKit-Sharp
 
 --------------------------------------------------------------
